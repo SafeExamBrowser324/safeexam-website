@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>SafeExam – Download</title>
+
+<style>
+:root {
+    --violet: #6f63c6;
+    --violet-light: #f4f3fb;
+    --border: #e2e0f2;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    background: var(--violet-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+}
+
+.box {
+    background: white;
+    padding: 40px;
+    width: 380px;
+    border-radius: 14px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+h2 {
+    color: var(--violet);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+a.download-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--violet);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+a.download-btn:hover {
+    background: #5d52b3;
+    transform: translateY(-1px);
+}
+
+.note {
+    margin-top: 18px;
+    font-size: 12px;
+    color: #555;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="content">
+    <h2>Download bereit</h2>
+    <p>
+        Ihr Key wurde erfolgreich überprüft.<br>
+        Der Download startet in einem neuen Tab.<br><br>
+        Diese Seite schließt sich automatisch.
+    </p>
+
+    <a
+        class="download-btn"
+        href="https://download1529.mediafire.com/3x5x5ubci80gFXvv3FMvxMePr6C4iZ5vfAzpPf--rhK77maKE6vIexFZci21ZZVHK_TjIQPtXpST1IqjFDGpzVF-aP4Kxb8DSqgqrAKRrmbQ79rUZns18qIIyDoNARZWI1RW0J0DpBRWVeUt0aeZLkynE9EU_NKDQkA01mERjQl1SCc/jila2z7wgx6mykp/datei.zip"
+        target="_blank"
+        rel="noopener"
+        onclick="closeAfterDownload()"
+    >
+        ZIP herunterladen
+    </a>
+
+    <div class="note">
+        Falls sich das Fenster nicht schließt, können Sie es manuell schließen.
+    </div>
+</div>
+
+<script>
+function closeAfterDownload() {
+    setTimeout(() => {
+        // Versuch: Fenster schließen
+        window.close();
+
+        // Fallback: Seite unbrauchbar machen
+        document.getElementById("content").innerHTML =
+            "<h2>Download gestartet</h2><p>Dieses Fenster kann jetzt geschlossen werden.</p>";
+    }, 3000);
+}
+</script>
+
+</body>
+</html>
